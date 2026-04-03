@@ -115,9 +115,10 @@ These design decisions were necessary to:
 ## Provided test classes
 The project includes the following provided tests:
 - `ArchitectureTest.java`
-- `SystemIssuesPR2Test.java`
 - `FactorySystemIssues.java`
-- `StackLinkedListTest.java`
+- `StackLinkedListExtraTest.java`
+- `SystemIssueExtraTest.java`
+- `SystemIssuesPR2Test.java`
 
 These tests validate:
 - entity creation and updates
@@ -129,16 +130,19 @@ These tests validate:
 ## Additional test cases
 As requested in the PR2 statement, the test suite was extended with new scenarios.
 
-### Added test class
+### Added test classes
 - `SystemsIssuesExtraTest.java`
+- `StackLinkedListExtraTest.java`
 
 ### Purpose of the new tests
-The additional test class was created to validate cases such as:
+The additional test classes were created to validate cases such as:
 - consistency of links between related entities
 - extra checks for the LIFO issue resolution order
 - update operations without duplication
 - validation of issue state after resolution
 - extra checks for the system with the largest number of components
+- additional validation of the custom linked stack behavior
+- checks for empty stack state, push/pop behavior, and value iteration
 
 ## Problems encountered and additional comments
 During development, the main challenge was implementing the project while respecting these constraints:
@@ -146,14 +150,6 @@ During development, the main challenge was implementing the project while respec
 - not using prohibited `java.util` collection classes
 - keeping the code compatible with the expected behavior of the official test suite
 
-Another practical issue during setup was the Java version mismatch in IntelliJ and Maven configuration. The project was finally executed successfully with a Java 16 SDK configuration aligned with the local environment.
-
-## How to run the project
-1. Import the Maven project into the IDE.
-2. Make sure the project SDK is correctly configured.
-3. Verify that the DSLib JAR is available in the expected location.
-4. Run all JUnit tests under `src/test/java`.
-5. Confirm that all tests pass in green.
 
 ## Evidence of test execution
 All JUnit tests under `src/test/java` were executed successfully in green.
